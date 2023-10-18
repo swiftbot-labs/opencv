@@ -21,7 +21,7 @@ jobs:
   build_linux_arm: 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu_latest]
         java: [8]
 
     runs-on: ${{ matrix.os }}
@@ -45,7 +45,7 @@ jobs:
         uses: uraimo/run-on-arch-action@v2.0.9
         with:
           arch: armv7
-          distro: ubuntu-latest
+          distro: ubuntu_latest
           
            # Not required, but speeds up builds
           githubToken: ${{ github.token }}
@@ -116,7 +116,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with: 
-          name: ubuntu-latest
+          name: ubuntu_latest
           path: |
             artifacts/bin/opencv-${{ env.OPENCV_VERSION_SHORT }}.jar
             artifacts/lib/libopencv_java${{ env.OPENCV_VERSION_SHORT }}.so
@@ -128,7 +128,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu_latest]
         java: [8]
 
     runs-on: ${{ matrix.os }}
@@ -172,7 +172,7 @@ jobs:
     needs: build_dist
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu_latest]
         java: [8]
 
     runs-on: ${{ matrix.os }}
