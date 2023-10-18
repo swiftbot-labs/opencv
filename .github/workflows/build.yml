@@ -21,8 +21,8 @@ jobs:
   build_linux_arm: 
     strategy:
       matrix:
-        os: [ubuntu-23.04]
-        java: [17]
+        os: [ubuntu-18.04]
+        java: [8]
 
     runs-on: ${{ matrix.os }}
 
@@ -45,7 +45,7 @@ jobs:
         uses: uraimo/run-on-arch-action@v2.0.9
         with:
           arch: armv7
-          distro: ubuntu23.04
+          distro: ubuntu18.04
           
            # Not required, but speeds up builds
           githubToken: ${{ github.token }}
@@ -128,8 +128,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-23.04]
-        java: [17]
+        os: [ubuntu-18.04]
+        java: [8]
 
     runs-on: ${{ matrix.os }}
 
@@ -172,8 +172,8 @@ jobs:
     needs: build_dist
     strategy:
       matrix:
-        os: [ubuntu-23.04]
-        java: [17]
+        os: [ubuntu-18.04]
+        java: [8]
 
     runs-on: ${{ matrix.os }}
 
