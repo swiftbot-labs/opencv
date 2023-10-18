@@ -21,7 +21,7 @@ jobs:
   build_linux_arm: 
     strategy:
       matrix:
-        os: [ubuntu_latest]
+        os: [ubuntu-latest]
         java: [8]
 
     runs-on: ${{ matrix.os }}
